@@ -1,27 +1,26 @@
-# Taskmg
+## [Angular Lazy Loading](https://angular.io/guide/lazy-loading-ngmodules)
+**steps:**
+step 1: generate a new project `ng new project --routing`, `--routing` will help you to generate a `app-routing.module.ts` file. If you didn't use this commands, you need to make this file by yourself. This file will help you manage your routes well.
+app-routing.module.ts
+```
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
+const routes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', loadChildren: './auth/auth.module#AuthModule' },
+];
 
-## Development server
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+```
+step 2: generate two files to manage your common parts and shared parts, `ng g m core`, `ng g m shared`. You can generate public components such as header, footer in core file by `ng g c core/header`, 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+step 3: generate a module `ng g m auth --routing`, you will get an auth file, and then keep going on generating components `ng g c auth/login`, `ng g c auth/register`
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Vscode plugins for Angular
+- Angular 7 Snippets
+- tslint

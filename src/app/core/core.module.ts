@@ -28,7 +28,7 @@ import { loadSvgSource } from '../utils/svgIcon';
 })
 export class CoreModule {
   constructor (
-    @Optional() @SkipSelf() parent: CoreModule,
+    @Optional() @SkipSelf() parentModule: CoreModule,
     ir: MatIconRegistry,
     ds: DomSanitizer
     ) {

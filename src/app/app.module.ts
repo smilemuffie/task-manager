@@ -6,8 +6,7 @@ import { MatSidenavModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginModule } from './login/login.module';
-
+import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent
@@ -17,10 +16,9 @@ import { LoginModule } from './login/login.module';
     AppRoutingModule,
     MatSidenavModule,
     CoreModule,
-    LoginModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false }} ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
