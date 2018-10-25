@@ -1,4 +1,4 @@
-<form action="">
+<form>
   <h2 mat-dialog-title>新建项目</h2>
   <div mat-dialog-content>
     <mat-form-field class="full-width">
@@ -9,7 +9,7 @@
     </mat-form-field>
   </div>
   <div mat-dialog-action>
-    <button mat-raised-button type="button" color="accent">保存</button>
+    <button mat-raised-button type="button" color="accent" (click)="onClick()">保存</button>
     <button mat-button mat-dialog-close type="button">关闭</button>
   </div>
 </form>

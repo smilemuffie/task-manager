@@ -9,6 +9,7 @@ export const loadSvgSource = (ir: MatIconRegistry, ds: DomSanitizer) => {
   const avatarDir = `${imgDir}/avatar`;
 
   ir.addSvgIcon(`menu`, ds.bypassSecurityTrustResourceUrl(`${iconDir}/menu.svg`));
+  ir.addSvgIcon(`move`, ds.bypassSecurityTrustResourceUrl(`${iconDir}/move.svg`));
   ir.addSvgIcon(`add`, ds.bypassSecurityTrustResourceUrl(`${iconDir}/add.svg`));
   ir.addSvgIcon(`delete`, ds.bypassSecurityTrustResourceUrl(`${iconDir}/delete.svg`));
   ir.addSvgIcon(`menu`, ds.bypassSecurityTrustResourceUrl(`${iconDir}/menu.svg`));
