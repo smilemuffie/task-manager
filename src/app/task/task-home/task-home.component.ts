@@ -26,7 +26,7 @@ export class TaskHomeComponent implements OnInit {
           priority: 3,
         }, {
           id: 2,
-          desc: '任务2：完成',
+          desc: '任务2：完成l 好多 好多 好多 好多 好多',
           owner: {
             id: 1,
             name: '张4',
