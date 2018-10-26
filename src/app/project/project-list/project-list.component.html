@@ -1,4 +1,11 @@
-<app-project-item class="card" *ngFor="let project of projectList" [item]="project" (invite)="launchInviteDialog()">
+<app-project-item
+class="card"
+*ngFor="let project of projectList"
+[item]="project"
+(inviteClick)="launchInviteDialog()"
+(editClick)="launchUpdateDialog()"
+(deleteClick)="launchConfirmDialog()"
+>
 
 </app-project-item>
 <button mat-fab class="fab-button" type="button" (click)="openNewProjectDialog()">

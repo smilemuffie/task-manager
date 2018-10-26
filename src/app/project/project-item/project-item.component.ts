@@ -10,14 +10,23 @@ export class ProjectItemComponent implements OnInit {
   @Input () item: object;
 
   // Can not prefixed with on, if you use onInvite
-  @Output() invite = new EventEmitter<void>();
-
+  @Output() inviteClick = new EventEmitter<void>();
+  @Output() editClick = new EventEmitter<void>();
+  @Output() deleteClick = new EventEmitter<void>();
   constructor() { }
 
   ngOnInit() {
   }
 
   onInviteClick() {
-    this.invite.emit();
+    this.inviteClick.emit();
+  }
+
+  onEditClick() {
+    this.editClick.emit();
+  }
+
+  onDeleteClick() {
+    this.deleteClick.emit();
   }
 }

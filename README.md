@@ -24,3 +24,6 @@ step 3: generate a module `ng g m auth --routing`, you will get an auth file, an
 ## Vscode plugins for Angular
 - Angular 7 Snippets
 - tslint
+
+tips
+1. Dialog components must be injected in entryComponents, so you can use this.dialog.open(xxxComponent)
