@@ -4,9 +4,11 @@
     <mat-form-field class="full-width">
       <input matInput type="password" placeholder="任务内容">
     </mat-form-field>
-    <mat-radio-group>
-      <mat-radio-button *ngFor="let priority of priorities" [value]="priority.value">{{priority.label}} </mat-radio-button>
-    </mat-radio-group>
+
+      <mat-radio-group>
+        <mat-radio-button *ngFor="let priority of priorities" [value]="priority.value">{{priority.label}} </mat-radio-button>
+      </mat-radio-group>
+
     <mat-form-field class="full-width">
       <input matInput placeholder="任务截至日期" value="value" [matDatepicker]="dueDatepicker">
       <mat-datepicker-toggle matSuffix [for]="dueDatepicker"></mat-datepicker-toggle>
