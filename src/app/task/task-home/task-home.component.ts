@@ -1,16 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { NewTaskComponent } from '../new-task/new-task.component';
 import { CopyTaskComponent } from '../copy-task/copy-task.component';
 import { ConfirmDialogComponent } from '../../shared/confirm-dialog/confirm-dialog.component';
 import { NewTaskListComponent } from '../new-task-list/new-task-list.component';
+import { slideToRight } from '../../animations/router.anim';
 
 @Component({
   selector: 'app-task-home',
   templateUrl: './task-home.component.html',
-  styleUrls: ['./task-home.component.styl']
+  styleUrls: ['./task-home.component.styl'],
+  animations: [
+    slideToRight
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TaskHomeComponent implements OnInit {
+  // TODO: Bind route animation;
+  @HostBinding('@routeAnim') state;
 
   lists = [
     {
@@ -73,7 +80,7 @@ export class TaskHomeComponent implements OnInit {
     }
   ];
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog, private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
   }
@@ -101,6 +108,20 @@ export class TaskHomeComponent implements OnInit {
   launchEditListDialog() {
     const dialogRef = this.dialog.open(NewTaskListComponent, { data: { title: '更改列表名称' } });
     dialogRef.afterClosed().subscribe(res => console.log(res));
+  }
+
+  handleMove(srcData, list) {
+    console.log(srcData);
+    switch (srcData.tag) {
+      case 'task-item':
+        console.log('handle item');
+        break;
+      case 'task-list':
+        console.log('handle list');
+        break;
+      default:
+        break;
+    }
   }
 
 }
