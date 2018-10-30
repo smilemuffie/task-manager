@@ -22,8 +22,9 @@ export class TaskHomeComponent implements OnInit {
   lists = [
     {
       id: 1,
-      name: '待办',
+      name: '进行中',
       completed: true,
+      order: 1,
       tasks: [
         {
           id: 1,
@@ -52,6 +53,7 @@ export class TaskHomeComponent implements OnInit {
     {
       id: 1,
       name: '待办',
+      order: 2,
       tasks: [
         {
           id: 1,
@@ -85,8 +87,13 @@ export class TaskHomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  launchNewTaskDialog() {
+  launchNewTaskListDialog() {
     const dialogRef = this.dialog.open(NewTaskListComponent, { data: { title: '新建任务列表'} });
+    dialogRef.afterClosed().subscribe(res => console.log(res));
+  }
+
+  launchNewTaskDialog(task) {
+    const dialogRef = this.dialog.open(NewTaskComponent, { data: { title: '新建任务', task: task } });
     dialogRef.afterClosed().subscribe(res => console.log(res));
   }
 
@@ -117,11 +124,19 @@ export class TaskHomeComponent implements OnInit {
         console.log('handle item');
         break;
       case 'task-list':
-        console.log('handle list');
+        // Exchange the order
+        const srcList = srcData.data;
+        const tempOrder = srcList.order;
+        srcList.order = list.order;
+        list.order = tempOrder;
         break;
       default:
         break;
     }
+  }
+
+  handleQuickTask(desc: string) {
+    console.log(desc);
   }
 
 }

@@ -16,7 +16,6 @@ export class DragDropService {
   private _dragData = new BehaviorSubject<DragData>(null);
 
   setDragData(data: DragData) {
-    console.log(data);
     this._dragData.next(data);
   }
 

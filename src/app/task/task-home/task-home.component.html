@@ -10,6 +10,7 @@
   [draggedClass]="'drag-start'"
   [dragData]="list"
   (dropped)="handleMove($event, list)"
+  [ngStyle]="{'order': list.order}"
   >
     <app-task-header
       [header]="list.name"
@@ -19,9 +20,10 @@
       (editListClick)="launchEditListDialog()"
      >
     </app-task-header>
+    <app-quick-task (quickTask)="handleQuickTask($event)"></app-quick-task>
     <app-task-item *ngFor="let task of list.tasks" [task]="task" (taskClick)="launchUpdateTaskDialog(task)"></app-task-item>
   </app-task-list>
 </div>
-<button mat-fab class="fab-button" type="button" (click)="launchNewTaskDialog()">
+<button mat-fab class="fab-button" type="button" (click)="launchNewTaskListDialog()">
   <mat-icon>add</mat-icon>
 </button>
