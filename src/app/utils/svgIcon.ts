@@ -15,7 +15,7 @@ export const loadSvgSource = (ir: MatIconRegistry, ds: DomSanitizer) => {
   ir.addSvgIcon(`menu`, ds.bypassSecurityTrustResourceUrl(`${iconDir}/menu.svg`));
   ir.addSvgIcon(`day`, ds.bypassSecurityTrustResourceUrl(`${sidebarDir}/day.svg`));
   ir.addSvgIcon(`month`, ds.bypassSecurityTrustResourceUrl(`${sidebarDir}/month.svg`));
-  ir.addSvgIcon(`projext`, ds.bypassSecurityTrustResourceUrl(`${sidebarDir}/project.svg`));
+  ir.addSvgIcon(`projects`, ds.bypassSecurityTrustResourceUrl(`${sidebarDir}/projects.svg`));
   ir.addSvgIcon(`projects`, ds.bypassSecurityTrustResourceUrl(`${sidebarDir}/projects.svg`));
   ir.addSvgIcon(`week`, ds.bypassSecurityTrustResourceUrl(`${sidebarDir}/week.svg`));
   // Add a list of svg

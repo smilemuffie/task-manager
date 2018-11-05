@@ -7,12 +7,16 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SharedModule } from '../shared/shared.module';
+import { AppRoutingModule } from '../app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { loadSvgSource } from '../utils/svgIcon';
 
 @NgModule({
   imports: [
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     HeaderComponent,
@@ -23,8 +27,10 @@ import { loadSvgSource } from '../utils/svgIcon';
     SharedModule,
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
-  ]
+    SidebarComponent,
+    AppRoutingModule,
+    BrowserAnimationsModule
+  ],
 })
 export class CoreModule {
   constructor (
