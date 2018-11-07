@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OverlayModule } from '@angular/cdk/overlay';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {OverlayModule} from '@angular/cdk/overlay';
 // Import modules from Material
 import {
   MatToolbarModule,
@@ -20,12 +20,12 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatSelectModule,
-  MatSidenavModule,
+  MatSidenavModule
 } from '@angular/material';
-import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
-import { DirectiveModule } from '../directive/directive.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {ConfirmDialogComponent} from './confirm-dialog/confirm-dialog.component';
+import {DirectiveModule} from '../directive/directive.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ImageListSelectComponent} from './image-list-select/image-list-select.component';
 
 @NgModule({
   imports: [
@@ -54,7 +54,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
 
   ],
-  declarations: [ConfirmDialogComponent],
+  declarations: [
+    ConfirmDialogComponent, ImageListSelectComponent
+  ],
   exports: [
     CommonModule,
     OverlayModule,
@@ -78,10 +80,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatSidenavModule,
     DirectiveModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ImageListSelectComponent
   ],
-  entryComponents: [
-    ConfirmDialogComponent
-  ]
+  entryComponents: [ConfirmDialogComponent]
 })
-export class SharedModule { }
+export class SharedModule {}

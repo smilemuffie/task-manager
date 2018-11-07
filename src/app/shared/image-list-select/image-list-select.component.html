@@ -1,0 +1,24 @@
+<div>
+  <span>{{title}}</span>
+  <mat-icon class="avatar" [svgIcon]="selected" *ngIf="useSvgIcon else imgSelect"></mat-icon>
+  <ng-template #imgSelect>
+    <img [src]="selected" alt="img selected" class="cover">
+  </ng-template>
+</div>
+<div class="scroll-container">
+  <mat-grid-list [cols]="cols" [rowHeight]="rowHeight">
+    <mat-grid-tile *ngFor="let avatar of avatarList; let i = index">
+      <div class="image-container" (click)="onChange(i)">
+        <mat-icon class="avatar" [svgIcon]="avatar" *ngIf="useSvgIcon else imgSelect"></mat-icon>
+        <ng-template #imgSelect>
+          <img [src]="avatar" alt="img selected" ngStyle="{'width': avatarWidth}">
+        </ng-template>
+        <div class="after">
+          <div class="zoom">
+            <mat-icon>checked</mat-icon>
+          </div>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
