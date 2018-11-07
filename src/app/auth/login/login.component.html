@@ -21,10 +21,10 @@
 
   <mat-card>
     <mat-card-title class="text-center">每日佳句</mat-card-title>
-    <mat-card-subtitle>读万卷书</mat-card-subtitle>
-    <img mat-card-image src="http://placehold.it/200x100" alt="">
+    <mat-card-subtitle>{{quote.cn}}</mat-card-subtitle>
+    <img mat-card-image [src]="quote.pic" alt="quote image">
     <mat-card-content>
-      feufh feufh fehufhf eufh feufh fehufh feufh feufh fehufh feufh feufh fehufh
+      {{quote.en}}
     </mat-card-content>
   </mat-card>
 </form>

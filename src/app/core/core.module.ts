@@ -10,6 +10,7 @@ import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { loadSvgSource } from '../utils/svgIcon';
+import { environment } from '../../environments/environment';
 
 @NgModule({
   imports: [
@@ -31,6 +32,12 @@ import { loadSvgSource } from '../utils/svgIcon';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
+  providers: [
+    {
+      provide: 'BASE_CONFIG',
+      useValue: environment.BASE_CONFIG
+    }
+  ]
 })
 export class CoreModule {
   constructor (
