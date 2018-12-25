@@ -18,7 +18,7 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR, NG_VALIDATORS, FormControl} fro
   ]
 })
 
-export class ImageListSelectComponent implements OnInit {
+export class ImageListSelectComponent implements ControlValueAccessor {
   @Input()title = '选择';
   @Input()cols = 6;
   @Input()rowHeight: any;
@@ -31,7 +31,6 @@ export class ImageListSelectComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
 
   onChange(i) {
     this.selected = this.avatarList[i];
@@ -46,7 +45,7 @@ export class ImageListSelectComponent implements OnInit {
     this.propagateChange = fn;
   }
 
-  registerOnTouch(fn: any): void {}
+  registerOnTouched(fn: any): void {}
 
   validate(c: FormControl): {[key: string]: any} {
     return this.selected ? null : {
