@@ -58,7 +58,9 @@ import {ImageListSelectComponent} from './image-list-select/image-list-select.co
 
   ],
   declarations: [
-    ConfirmDialogComponent, ImageListSelectComponent, AgeInputComponent
+    ConfirmDialogComponent,
+    ImageListSelectComponent,
+    // AgeInputComponent
   ],
   exports: [
     CommonModule,
