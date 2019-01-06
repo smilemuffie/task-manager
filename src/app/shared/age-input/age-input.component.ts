@@ -138,7 +138,8 @@ OnInit {
 
     const age$ = Observable
                   .call(combineLatest(ageNum$, ageUnit$, (_n, _u) => {
-                    return this.toDate({age: _n, unit: _u});
+                    // return this.toDate({age: _n, unit: _u});
+                    return null;
                   }))
                   .pipe(map(d => {
                     return { date: d, from: 'age' };
