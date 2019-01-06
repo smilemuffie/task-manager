@@ -1,6 +1,6 @@
 {
   "apps" : [{
-     "name" : "task manager",
+     "name" : "task",
      "script" : "app.js"
   }],
   "deploy" : {
