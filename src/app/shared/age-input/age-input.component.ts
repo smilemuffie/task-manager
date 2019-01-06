@@ -64,6 +64,7 @@ OnInit {
 
   validate(c: FormControl): { [key: string]: any } {
     const val = c.value;
+    return null;
   }
 
   validateDate(c: FormControl): {[key: string]: any} {
