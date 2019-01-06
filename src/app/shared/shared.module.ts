@@ -27,7 +27,7 @@ import {ConfirmDialogComponent} from './confirm-dialog/confirm-dialog.component'
 import {DirectiveModule} from '../directive/directive.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ImageListSelectComponent} from './image-list-select/image-list-select.component';
-import {AgeInputComponent} from './age-input/age-input.component';
+// import {AgeInputComponent} from './age-input/age-input.component';
 
 @NgModule({
   imports: [
@@ -58,7 +58,9 @@ import {AgeInputComponent} from './age-input/age-input.component';
 
   ],
   declarations: [
-    ConfirmDialogComponent, ImageListSelectComponent, AgeInputComponent
+    ConfirmDialogComponent,
+    ImageListSelectComponent,
+    // AgeInputComponent
   ],
   exports: [
     CommonModule,
